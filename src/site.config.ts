@@ -58,14 +58,14 @@ export const theme: ThemeUserConfig = {
     footer: {
   year: '© 2026 Aimer ',
   links: [],
-  pos: 2
+  pos: 2,
+  credits: true,
+  social: [
+    { icon: 'github', label: 'GitHub', href: 'https://github.com/AimerMio' },
+    { icon: 'rss', label: 'RSS', href: '/rss.xml' }
+  ]
 },
-credits: true,
-social: [
-  { icon: 'github', label: 'GitHub', href: 'https://github.com/AimerMio' },
-  { icon: 'rss', label: 'RSS', href: '/rss.xml' }
-],
-content: {
+  content: {
   externalLinks: {
     content: '》',
     properties: { style: 'user-select:none' }
@@ -77,6 +77,10 @@ content: {
 };
 export const integ: IntegrationUserConfig = {
   // [Links]
+  quote: {
+  server: 'https://dummyjson.com/quotes/random',
+  target: "(data) => (data.quote.length > 80 ? `${data.quote.slice(0, 80)}...` : data.quote || 'Error')"
+},
   // https://astro-pure.js.org/docs/integrations/links
   links: {
     // Friend logbook
