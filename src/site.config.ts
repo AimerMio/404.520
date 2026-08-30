@@ -14,11 +14,10 @@ export const theme: ThemeUserConfig = {
   socialCard: '/images/social-card.png',
   /** Specify the default language for this site. */
   locale: {
-    lang: 'en-US',
-    attrs: 'en_US',
-    // Date locale
-    dateLocale: 'en-US',
-    dateOptions: {
+  lang: "zh-CN",
+  attrs: "zh_CN",
+  dateLocale: "zh-CN",
+  dateOptions: {
       day: 'numeric',
       month: 'short',
       year: 'numeric'
@@ -47,31 +46,25 @@ export const theme: ThemeUserConfig = {
 
   /** Configure the header of your site. */
   header: {
-    menu: [
-      { title: 'Blog', link: '/blog' },
-      { title: 'Docs', link: '/docs' },
-      { title: 'Projects', link: '/projects' },
-      { title: 'Links', link: '/links' },
-      { title: 'About', link: '/about' }
-    ]
+ menu: [
+  { title: "博客", link: "/blog" },
+  { title: "文档", link: "/docs" },
+  { title: "项目", link: "/projects" },
+  { title: "友链", link: "/links" },
+  { title: "关于", link: "/about" },
+]
   },
 
   /** Configure the footer of your site. */
   footer: {
     // Year format
-    year: `© ${new Date().getFullYear()}`,
+    year: `© ${new Date().getFullYear(@EchoMio2011)}`,
     // year: `© 2019 - ${new Date().getFullYear()}`,
     links: [
       // Registration link
-      {
-        title: 'Moe ICP 114514',
-        link: 'https://icp.gov.moe/?keyword=114514',
-        style: 'text-sm' // Uno/TW CSS class
-      },
+      
+      
       // Privacy Policy link
-      {
-        title: 'Site Policy',
-        link: '/terms',
         pos: 2 // position set to 2 will be appended to copyright line
       }
     ],
@@ -108,20 +101,9 @@ export const integ: IntegrationUserConfig = {
   links: {
     // Friend logbook
     logbook: [
-      { date: '2025-03-16', content: 'Is there a leakage?' },
-      { date: '2025-03-16', content: 'A leakage of what?' },
-      { date: '2025-03-16', content: 'I have a full seat of water, like, full of water!' },
-      { date: '2025-03-16', content: 'Must be the water.' },
-      { date: '2025-03-16', content: "Let's add that to the words of wisdom." }
-    ],
+  { date: '2026-08-31', content: '欢迎来到我的小站！' },
+],
     // Yourself link info
-    applyTip: [
-      { name: 'Name', val: theme.title },
-      { name: 'Desc', val: theme.description || 'Null' },
-      { name: 'Link', val: 'https://astro-pure.js.org/' },
-      { name: 'Avatar', val: 'https://astro-pure.js.org/favicon/favicon.ico' }
-    ],
-    // Cache avatars in `public/avatars/` to improve user experience.
     cacheAvatar: false
   },
   // [Search]
