@@ -56,11 +56,10 @@ export const theme: ThemeUserConfig = {
 
   /** Configure the footer of your site. */
   footer: {
-  year: '© 2026 EchoMio2011',
+  year: '© 2026 Aimer ',
   links: [],
   pos: 2
 },
-    ],
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
     credits: true,
     /** Optional details about the social media accounts for this site. */
