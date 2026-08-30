@@ -75,7 +75,8 @@ content: {
   blogPageSize: 8,
   share: ['weibo', 'x', 'bluesky'],
   imageCaption: true
-},
+}
+};
 
 export const integ: IntegrationUserConfig = {
   // [Links]
