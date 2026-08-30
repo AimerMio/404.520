@@ -56,16 +56,10 @@ export const theme: ThemeUserConfig = {
 
   /** Configure the footer of your site. */
   footer: {
-    // Year format
-    year: '© 2026 @EchoMio2011',
-    // year: `© 2019 - ${new Date().getFullYear()}`,
-    links: [
-      // Registration link
-      
-      
-      // Privacy Policy link
-        pos: 2 // position set to 2 will be appended to copyright line
-      }
+  year: '© 2026 EchoMio2011',
+  links: [],
+  pos: 2
+},
     ],
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
     credits: true,
