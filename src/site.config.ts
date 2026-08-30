@@ -87,7 +87,8 @@ export const integ: IntegrationUserConfig = {
   { date: '2026-08-31', content: '欢迎来到我的小站！' },
 ],
     // Yourself link info
-    cacheAvatar: false
+    cacheAvatar: false,
+    applyTip: []
   },
   // [Search]
   pagefind: true,
