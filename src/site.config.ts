@@ -64,28 +64,18 @@ export const theme: ThemeUserConfig = {
     credits: true,
     /** Optional details about the social media accounts for this site. */
     social: [
-      { icon: 'github', label: 'GitHub', href: 'https://github.com/cworld1/astro-theme-pure' },
-      { icon: 'rss', label: 'RSS', href: '/rss.xml' }
-    ]
+  { icon: 'github', label: 'GitHub', href: 'https://github.com/AimerMio' },
+  { icon: 'rss', label: 'RSS', href: '/rss.xml' }
+],
+content: {
+  externalLinks: {
+    content: '》',
+    properties: { style: 'user-select:none' }
   },
-
-  // [Content]
-  content: {
-    /** External links configuration */
-    externalLinks: {
-      content: ' ↗',
-      /** Properties for the external links element */
-      properties: { style: 'user-select:none' }
-    },
-    /** Blog page size for pagination (optional) */
-    blogPageSize: 8,
-    /** Share buttons to show */
-    // Currently support weibo, x, bluesky
-    share: ['weibo', 'x', 'bluesky']
-    /** Enable image captions (default false) */
-    // imageCaption: true
-  }
-}
+  blogPageSize: 8,
+  share: ['weibo', 'x', 'bluesky'],
+  imageCaption: true
+},
 
 export const integ: IntegrationUserConfig = {
   // [Links]
