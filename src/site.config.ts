@@ -58,15 +58,17 @@ export const theme: ThemeUserConfig = {
   footer: {
   year: '© 2026 Aimer ',
   links: [],
-  pos: 2
+  pos: 2,
+  credits: true,
+  social: [
+    { icon: 'github', label: 'GitHub', href: 'https://github.com/AimerMio' },
+    { icon: 'rss', label: 'RSS', href: '/rss.xml' }
+  ]
 },
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
     credits: true,
     /** Optional details about the social media accounts for this site. */
-    social: [
-  { icon: 'github', label: 'GitHub', href: 'https://github.com/AimerMio' },
-  { icon: 'rss', label: 'RSS', href: '/rss.xml' }
-],
+    
 content: {
   externalLinks: {
     content: '》',
