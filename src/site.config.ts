@@ -106,7 +106,12 @@ export const integ: IntegrationUserConfig = {
     // target: `(data) => data[0].content || 'Error'`
     // - DummyJSON
     server: 'https://dummyjson.com/quotes/random',
-    target: `(data) => (data.quote.length > 80 ? \`${data.quote.slice(0, 80)}...\` : data.quote || 'Error')`
+    target: (data: any) =>
+      data?.quote
+        ? data.quote.length > 80
+          ? `${data.quote.slice(0, 80)}...`
+          : data.quote
+        : 'Error'
   },
   // [Typography]
   // https://unocss.dev/presets/typography
