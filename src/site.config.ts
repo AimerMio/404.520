@@ -56,11 +56,9 @@ export const theme: ThemeUserConfig = {
 
   /** Configure the footer of your site. */
     footer: {
-    year: '© 2026 Aimer ',
-    links: [],
-    pos: 2,
-
-  },
+  year: '© 2026 Aimer ',
+  links: [],
+  pos: 2
 },
 credits: true,
 social: [
@@ -68,15 +66,14 @@ social: [
   { icon: 'rss', label: 'RSS', href: '/rss.xml' }
 ],
 content: {
-  content: {
-    externalLinks: {
-      content: '》',
-      properties: { style: 'user-select:none' }
-    },
-    blogPageSize: 8,
-    share: ['weibo', 'x', 'bluesky'],
-    imageCaption: true
+  externalLinks: {
+    content: '》',
+    properties: { style: 'user-select:none' }
   },
+  blogPageSize: 8,
+  share: ['weibo', 'x', 'bluesky'],
+  imageCaption: true
+},
 };
 export const integ: IntegrationUserConfig = {
   // [Links]
