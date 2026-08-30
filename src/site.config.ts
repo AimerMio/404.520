@@ -55,28 +55,29 @@ export const theme: ThemeUserConfig = {
   },
 
   /** Configure the footer of your site. */
-  footer: {
-  year: '© 2026 Aimer ',
-  links: [],
-  pos: 2
+    footer: {
+    year: '© 2026 Aimer ',
+    links: [],
+    pos: 2,
+
+  },
 },
 credits: true,
 social: [
   { icon: 'github', label: 'GitHub', href: 'https://github.com/AimerMio' },
   { icon: 'rss', label: 'RSS', href: '/rss.xml' }
 ],
-
 content: {
-  externalLinks: {
-    content: '》',
-    properties: { style: 'user-select:none' }
+  content: {
+    externalLinks: {
+      content: '》',
+      properties: { style: 'user-select:none' }
+    },
+    blogPageSize: 8,
+    share: ['weibo', 'x', 'bluesky'],
+    imageCaption: true
   },
-  blogPageSize: 8,
-  share: ['weibo', 'x', 'bluesky'],
-  imageCaption: true
-}
 };
-
 export const integ: IntegrationUserConfig = {
   // [Links]
   // https://astro-pure.js.org/docs/integrations/links
@@ -93,21 +94,7 @@ export const integ: IntegrationUserConfig = {
   pagefind: true,
   // Add a random quote to the footer (default on homepage footer)
   // See: https://astro-pure.js.org/docs/integrations/advanced#web-content-render
-  // [Quote]
-  quote: {
-    // - Hitokoto
-    // https://developer.hitokoto.cn/sentence/#%E8%AF%B7%E6%B1%82%E5%9C%B0%E5%9D%80
-    // server: 'https://v1.hitokoto.cn/?c=i',
-    // target: `(data) => (data.hitokoto || 'Error')`
-    // - Quotable
-    // https://github.com/lukePeavey/quotable
-    // server: 'http://api.quotable.io/quotes/random?maxLength=60',
-    // target: `(data) => data[0].content || 'Error'`
-    // - DummyJSON
-    server: 'https://dummyjson.com/quotes/random',
-    // Must be a string: keep as string but avoid backtick interpolation which may be evaluated during import.
-    target: `(data) => (data && data.quote ? (data.quote.length > 80 ? data.quote.slice(0,80) + '...' : data.quote) : 'Error')`
-  },
+  
   // [Typography]
   // https://unocss.dev/presets/typography
   typography: {
