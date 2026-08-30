@@ -57,7 +57,7 @@ export const theme: ThemeUserConfig = {
   /** Configure the footer of your site. */
   footer: {
     // Year format
-    year: `© ${new Date().getFullYear(@EchoMio2011)}`,
+    year: '© 2026 @EchoMio2011',
     // year: `© 2019 - ${new Date().getFullYear()}`,
     links: [
       // Registration link
