@@ -25,9 +25,9 @@ export const theme: ThemeUserConfig = {
   },
   /** Set a logo image to show in the homepage. */
   logo: {
-    src: '/avatar.png'
-    alt: 'Avatar'},
-
+  src: '/avatar.png',
+  alt: 'Avatar'
+},
   titleDelimiter: '•',
   prerender: true, // pagefind search is not supported with prerendering disabled
   npmCDN: 'https://cdn.jsdelivr.net/npm',
