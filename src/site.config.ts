@@ -106,12 +106,8 @@ export const integ: IntegrationUserConfig = {
     // target: `(data) => data[0].content || 'Error'`
     // - DummyJSON
     server: 'https://dummyjson.com/quotes/random',
-    target: (data: any) =>
-      data?.quote
-        ? data.quote.length > 80
-          ? `${data.quote.slice(0, 80)}...`
-          : data.quote
-        : 'Error'
+    // Must be a string: keep as string but avoid backtick interpolation which may be evaluated during import.
+    target: `(data) => (data && data.quote ? (data.quote.length > 80 ? data.quote.slice(0,80) + '...' : data.quote) : 'Error')`
   },
   // [Typography]
   // https://unocss.dev/presets/typography
@@ -177,5 +173,6 @@ export const terms: CardListData = {
   ]
 }
 
-const config = { theme, integ } as Config
+// Astro-pure expects theme fields at the top-level. Spread theme here and keep integ nested.
+const config = { ...theme, integ } as Config
 export default config
