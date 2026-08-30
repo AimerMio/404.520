@@ -65,11 +65,7 @@ social: [
   { icon: 'github', label: 'GitHub', href: 'https://github.com/AimerMio' },
   { icon: 'rss', label: 'RSS', href: '/rss.xml' }
 ],
-content: {
-    /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
-    credits: true,
-    /** Optional details about the social media accounts for this site. */
-    
+
 content: {
   externalLinks: {
     content: '》',
