@@ -15,16 +15,19 @@ const headings = [
 
 <PageLayout title='About' {headings} comment>
   <p>Developer / Designer</p>
-  <p>
-    <p class="text-muted-foreground">高中生 / INFP / 摩羯座 / 二次元硬核玩家</p>
-<p class="text-muted-foreground">嘿嘿，我是 Aimer。虽然顶着摩羯座沉稳务实的头衔，但 INFP 的灵魂让我对二次元文化、电脑硬件和游戏有着近乎偏执的热爱。无论是 SOC 架构对比、显卡能效曲线，还是软件优化方案，我都聊得来。</p>
-<p class="text-muted-foreground">学业上，理科逻辑是我的强项，但英语是我的“阿喀琉斯之踵”，啃全英文文档全靠连蒙带猜。这里是我在题海和技术边缘疯狂试探的自留地，欢迎来玩！</p>
-  </p>
-    Motto: Life surprises us with warmth we never saw coming, and hope that never fades. <Spoiler>这里可以夹私货，比如为什么要演奏春日影！</Spoiler>
-  </p>
-  
 
-  {/* general-talk */}
+  <div class="intro">
+    <p class="text-muted-foreground">高中生 / INFP / 摩羯座 / 二次元硬核玩家</p>
+    <p class="text-muted-foreground">嘿嘿，我是 Aimer。虽然顶着摩羯座沉稳务实的头衔，但 INFP 的灵魂让我对二次元文化、电脑硬件和游戏有着近乎偏执的热爱。</p>
+    <p class="text-muted-foreground">学业上，理科逻辑是我的强项，但英语是我的“阿喀琉斯之踵”，啃全英文文档全靠连蒙带猜。这里记录我在题海和技术边缘的练习与心得。</p>
+  </div>
+
+  <p>
+    Motto: Life surprises us with warmth we never saw coming, and hope that never fades.
+    <Spoiler>这里可以夹私货，比如为什么要演奏春日影！</Spoiler>
+  </p>
+
+  <!-- general-talk -->
   <h2 id='hobbies'>Hobbies</h2>
   <ul>
     <li>Lorem ipsum dolor sit amet, vidit suscipit at mei.</li>
@@ -36,7 +39,7 @@ const headings = [
     <li>Impetus fuisset ullamcorper pri cu, his posse iisque ad, aliquam honestatis usu id.</li>
   </ul>
 
-  {/* tools */}
+  <!-- tools -->
   <h2 id='tools'>Tools</h2>
   <p>Current support tools as follow:</p>
   <ToolSection
@@ -154,7 +157,7 @@ const headings = [
     ]}
   />
 
-  {/* social-networks */}
+  <!-- social-networks -->
   <h2 id='social-networks'>Social Networks</h2>
   <p>
     Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum
@@ -188,7 +191,7 @@ const headings = [
     ]}
   />
 
-  {/* gossips */}
+  <!-- gossips -->
   <h2 id='gossips'>Gossips</h2>
   <Collapse title='Lorem ipsum'>
     Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum
@@ -196,7 +199,7 @@ const headings = [
     possit voluptatum.
   </Collapse>
 
-  {/* about-blog */}
+  <!-- about-blog -->
   <h2 id='about-blog'>About Blog</h2>
   <p>Website history:</p>
   <Timeline
@@ -209,7 +212,7 @@ const headings = [
       {
         date: '2024-07-26',
         content:
-          'Website abstracted as a theme and published on <a href="https://github.com/cworld1/astro-theme-pure"target="_blank">Github</a>'
+          'Website abstracted as a theme and published on <a href="https://github.com/cworld1/astro-theme-pure" target="_blank">GitHub</a>'
       },
       {
         date: '2024-07-27',
@@ -222,7 +225,7 @@ const headings = [
     technical support provided by the following excellent projects/service providers:
   </p>
   <ul>
-    <li>Domain: <a href='#' target='_blank'>Vercel</a></li>
+    <li>Domain: <a href='https://vercel.com' target='_blank'>Vercel</a></li>
     <li>
       Framework & Theme: <a href='https://astro.build/' target='_blank'>Astro</a> + <a
         href='https://github.com/cworld1/astro-theme-pure'
