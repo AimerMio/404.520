@@ -1,7 +1,6 @@
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
-// import vercel from '@astrojs/vercel'
 import AstroPureIntegration from 'astro-pure'
-import { defineConfig, fontProviders, svgoOptimizer } from 'astro/config'
+import { defineConfig, fontProviders } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
 
@@ -25,46 +24,26 @@ import config from './src/site.config.ts'
 // https://astro.build/config
 export default defineConfig({
   // [Basic]
-  site: 'https://astro-pure.js.org',
-  // Deploy to a sub path
-  // https://astro-pure.js.org/docs/setup/deployment#platform-with-base-path
-  // base: '/astro-pure/',
+  site: 'https://你的域名.pages.dev', // 建议替换成你真实的Cloudflare链接，或者直接删掉这行
   trailingSlash: 'never',
-  // root: './my-project-directory',
   server: { host: true },
-  // https://docs.astro.build/en/guides/prefetch/
   prefetch: {
-    // prefetchAll: true,
     defaultStrategy: 'viewport'
   },
 
-  // [Adapter]
-  // https://docs.astro.build/en/guides/deploy/
-  // adapter: vercel({ imageService: true }),
-  output: 'server',
-  // Local (standalone)
-  // adapter: node({ mode: 'standalone' }),
+  // 确保只有这一个 output，必须是 'static'
   output: 'static',
 
-  // [Assets]
+  // 跳过所有远程图片的下载和优化，防止 Cloudflare 连不上图床导致崩溃
   image: {
-    responsiveStyles: true,
-    service: { entrypoint: 'astro/assets/services/sharp' },
-    // domains: ['ghchart.rshah.org'],
-    remotePatterns: [{ protocol: 'https' }]
+    service: { entrypoint: 'astro/assets/services/noop' }
   },
-  // Enable font preloading and optimization
-  // https://docs.astro.build/en/guides/fonts/
+  // 字体配置
   fonts: [
     {
       provider: fontProviders.fontshare(),
       name: 'Satoshi',
       cssVariable: '--font-satoshi',
-      // Default included:
-      // weights: [400],
-      // styles: ["normal", "italics"],
-      // subsets: ["cyrillic-ext", "cyrillic", "greek-ext", "greek", "vietnamese", "latin-ext", "latin"],
-      // fallbacks: ["sans-serif"],
       styles: ['normal', 'italic'],
       weights: [400, 500],
       subsets: ['latin']
@@ -86,59 +65,27 @@ export default defineConfig({
         }
       ]
     ],
-    // https://docs.astro.build/en/guides/syntax-highlighting/
     shikiConfig: {
       themes: {
         light: 'github-light',
         dark: 'github-dark'
       },
       transformers: [
-        // Two copies of @shikijs/types (one under node_modules
-        // and another nested under @astrojs/markdown-remark → shiki).
-        // Official transformers
-        // @ts-ignore this happens due to multiple versions of shiki types
         transformerNotationDiff(),
-        // @ts-ignore this happens due to multiple versions of shiki types
         transformerNotationHighlight(),
-        // @ts-ignore this happens due to multiple versions of shiki types
         transformerRemoveNotationEscape(),
-        // Custom transformers
-        // @ts-ignore this happens due to multiple versions of shiki types
         updateStyle(),
-        // @ts-ignore this happens due to multiple versions of shiki types
         addTitle(),
-        // @ts-ignore this happens due to multiple versions of shiki types
         addLanguage(),
-        // @ts-ignore this happens due to multiple versions of shiki types
-        addCopyButton(2000), // timeout in ms
-        // @ts-ignore this happens due to multiple versions of shiki types
-        addCollapse(15) // max lines that needs to collapse
+        addCopyButton(2000),
+        addCollapse(15)
       ]
     }
   },
 
   // [Integrations]
   integrations: [
-    // astro-pure will automatically add sitemap, mdx & unocss
-    // sitemap(),
-    // mdx(),
     AstroPureIntegration(config)
-  ],
-
-  // [Experimental]
-  experimental: {
-    // Allow compatible editors to support intellisense features for content collection entries
-    // https://docs.astro.build/en/reference/experimental-flags/content-intellisense/
-    contentIntellisense: true,
-    // Enable SVGO optimization for SVG assets
-    // https://docs.astro.build/en/reference/experimental-flags/svg-optimization/
-    svgOptimizer: svgoOptimizer(),
-    // Enables pre-rendering your prefetched pages on the client in supported browsers.
-    // https://docs.astro.build/en/reference/experimental-flags/client-prerender/
-    clientPrerender: true,
-    // https://docs.astro.build/en/reference/experimental-flags/queued-rendering/
-    queuedRendering: {
-      enabled: true
-    }
-  }
+  ]
+  // 注意：底部的 experimental 块、vercel 适配器和重复 output 均已删除，不会报错了
 })
